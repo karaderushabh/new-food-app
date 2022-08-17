@@ -1,0 +1,40 @@
+<div class="container" *ngIf="this.foss.length > 0">
+  <h2>Generated Bill</h2>
+  <table class="table">
+    <thead>
+      <th>Bill item Id</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Cost</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of foss">
+        <td>
+          {{ b.item_id }}
+        </td>
+        <td>
+          {{ b.item_name }}
+        </td>
+        <td *ngIf="b.item_id === 1">{{ b.item_cost / 40 }}</td>
+        <td *ngIf="b.item_id === 2">{{ b.item_cost / 60 }}</td>
+        <td *ngIf="b.item_id === 3">{{ b.item_cost / 30 }}</td>
+        <td *ngIf="b.item_id === 4">{{ b.item_cost / 10 }}</td>
+
+        <td>{{ b.item_cost }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="remove(this.b)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <div>No. of Items Ordered: {{ this.foss.length }}</div>
+    <h2>
+      Total Cost:
+      {{ tot | currency: "INR" }}
+    </h2>
+  </div>
+</div>

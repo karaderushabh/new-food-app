@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Menu</h2>
+  <table class="table">
+    <thead>
+      <th>Item Id</th>
+
+      <th>Name</th>
+      <th>Cost</th>
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let food of fooditem; let i = index">
+        <td>{{ food.item_id }}</td>
+        <td>{{ food.item_name }}</td>
+        <td>{{ this.currentcost[i] }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            (click)="
+              passid(
+                this.food.item_id,
+                this.food.item_name,
+                this.food,
+                this.clicked
+              )
+            "
+          >
+            Add
+          </button>
+        </td>
+      </tr>
+      <div></div>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="this.clicked">
+  <app-bill
+    [foss]="fos"
+    [c]="count"
+    [arrayofid]="arrayid"
+    [sum]="sum"
+  ></app-bill>
+</div>
+<div></div>
