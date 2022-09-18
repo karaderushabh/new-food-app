@@ -1,7 +1,7 @@
-Team:
+Instructions to run the project:
 
-1. Rushabh Sachin Karade
-2. Hema Mahendra Medikonda
-3. Ganesh Suduleti
-4. Sai Dinesh Nukala
-5. Narendra Kurakula
+Please connect your server with your database, in our case we have used derby server and dbeaver DBMS, and change the database configuration inside application.properties files.
+
+Run both the backend microservice on 8080 port
+
+Before running angular project add node modules 
